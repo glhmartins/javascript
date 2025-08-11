@@ -1,1 +1,1 @@
-Practicing Html, Css and Javascript
+Practicing Html, CSS and Javascript
