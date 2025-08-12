@@ -42,26 +42,25 @@ class Calculator {
     sum () {
         this.temp = this.cur;
         this.cur = `${Number(this.ant.slice(0,2))+Number(this.cur)}`;
-        this.ant = this.temp;
-        console.log(this.cur, this.ant);
+        this.ant = `${this.temp} ${this.operation.innerText}`;
     }
 
     sub() {
         this.temp = this.cur;
         this.cur = `${Number(this.ant.slice(0,2))-Number(this.cur)}`;
-        this.ant = this.temp;
+        this.ant = `${this.temp} ${this.operation.innerText}`;
     }
 
     mul(){
         this.temp = this.cur;
         this.cur = `${Number(this.cur)*Number(this.ant.slice(0,2))}`;
-        this.ant = this.temp;
+        this.ant = `${this.temp} ${this.operation.innerText}`;
     }
 
     div (){
         this.temp = this.cur;
         this.cur = `${Number(this.ant.slice(0,2))/Number(this.cur)}`;
-        this.ant = this.temp;
+        this.ant = `${this.temp} ${this.operation.innerText}`;
     }
     
     del (){
