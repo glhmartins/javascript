@@ -44,19 +44,24 @@ class Calculator {
         this.cur = `${Number(this.ant.slice(0,2))+Number(this.cur)}`;
         this.ant = this.temp;
         console.log(this.cur, this.ant);
-        this.updateDisplay();
     }
 
     sub() {
-        this.cur = `${(Number(this.anterior)-Number(this.atual))}`;
+        this.temp = this.cur;
+        this.cur = `${Number(this.ant.slice(0,2))-Number(this.cur)}`;
+        this.ant = this.temp;
     }
 
     mul(){
-        this.atual *= this.anterior;
+        this.temp = this.cur;
+        this.cur = `${Number(this.cur)*Number(this.ant.slice(0,2))}`;
+        this.ant = this.temp;
     }
 
     div (){
-        this.atual = this.anterior/this.atual;
+        this.temp = this.cur;
+        this.cur = `${Number(this.ant.slice(0,2))/Number(this.cur)}`;
+        this.ant = this.temp;
     }
     
     del (){
@@ -69,7 +74,7 @@ class Calculator {
         if (this.operation.innerText === "+") this.sum();
         else if (this.operation.innerText === "-") this.sub();
         else if (this.operation.innerText === "*") this.mul();
-        else if (this.operation.innerText === "&divide") this.div();
+        else if (this.operation.innerText === "÷") this.div();
         this.updateDisplay();
     }
 
